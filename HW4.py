@@ -248,6 +248,13 @@ history = new_a_model.fit(BaseX_train, BaseY_train, batch_size=batch_size, epoch
 loss_and_metrics = new_a_model.evaluate(X_test, Y_test, verbose=2)
 print("Test Loss is {:.2f} ".format(loss_and_metrics[0]))
 print("Test Accuracy is {:.2f} %".format(100*loss_and_metrics[1]))
+
+if not("results" in os.listdir()):
+    os.mkdir("results")
+save_dir = "results/"
+model_name = "25_epochs_weights.h5"
+model_path = os.path.join(save_dir, model_name)
+new_a_model.save(model_path)
 #-----------------------------------------------------------------------------------------
 
 
@@ -274,6 +281,13 @@ history = new_a_model.fit(BaseX_train, BaseY_train, batch_size=batch_size, epoch
 loss_and_metrics = new_a_model.evaluate(X_test, Y_test, verbose=2)
 print("Test Loss is {:.2f} ".format(loss_and_metrics[0]))
 print("Test Accuracy is {:.2f} %".format(100*loss_and_metrics[1]))
+
+if not("results" in os.listdir()):
+    os.mkdir("results")
+save_dir = "results/"
+model_name = "40_epochs_weights.h5"
+model_path = os.path.join(save_dir, model_name)
+new_a_model.save(model_path)
 #-----------------------------------------------------------------------------------------
 
 
